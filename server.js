@@ -9,7 +9,9 @@
    * Get the port envirement variable
    */
   const port = process.env.PORT || 3000;
-  console.log(process.env);
+  const maintenance = process.env.MAINTENANCE || 0;
+  const debug = process.env.DEBUG || 0;
+  debug && console.log(process.env);
   /**
    * Initialization of express
    */
@@ -24,9 +26,11 @@
    * 
    * The middlewear is executed in the order of declaration, so we need to declate this before the static so we don't go to static pages when on maintenance
    */
-  app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-  });
+  if (maintenance == 1) {
+    app.use((req, res, next) => {
+      res.render('maintenance.hbs');
+    });
+  }
   /**
    * Define some midlewear "interceptors?"
    * Calling "next" to make sure express knows we are finished
@@ -36,7 +40,7 @@
   app.use((req, res, next) => {
     let now = new Date().toString();
     let log = `${now}: ${req.method} - ${req.originalUrl}`;
-    console.log(log);
+    debug & console.log(log);
     fs.appendFile('server.log', log + '\n', (err) => { err && console.log('Unable to append to server.log') });
     next();
   });
@@ -78,6 +82,6 @@
   });
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-    console.log(`http://127.0.0.1:${port}`);
+    debug && console.log(`http://127.0.0.1:${port}`);
   })
 })();

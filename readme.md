@@ -45,7 +45,10 @@ git push -u origin master
 
 https://www.heroku.com/
 
-
+`heroku login`
+`heroku keys:add`   -> Add ssh key to heroku
+`heroku create`   -> Creates a new app in heroku and adds the remote to the local git repository
+`heroku open`   -> Opens the heroku address
 
 
 
