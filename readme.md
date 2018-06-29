@@ -11,6 +11,8 @@ https://www.npmjs.com/package/hbs <br/>
 #### Run with:
 `nodemon server.js -e`
 
+## GIT:
+
 #### Using GIT (local):
 `git init`        -> creates local repository (creates .git folder) <br/>
 `git status`      -> list of files/folders available to GIT <br/>
@@ -18,7 +20,7 @@ https://www.npmjs.com/package/hbs <br/>
 
 `touch .gitignore`  -> Create a file to let git know witch files and folders to ignore <br/>
 
-### add several files to be ignores:
+### Add several files to be ignores:
 ```
 echo node_modules/ >> .gitignore
 echo server.log >> .gitignore
@@ -27,7 +29,7 @@ echo package-lock.json >> .gitignore
 
 `git commit -m "<message>"`   -> commit file to local git
 
-### setup ssh key:
+#### Setup ssh key:
 https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/t/lecture/5525326
 
 ### Create Github (or other) repository, then:
