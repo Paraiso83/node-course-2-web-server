@@ -9,6 +9,7 @@
    * Get the port envirement variable
    */
   const port = process.env.port || 3000;
+  console.log(process.env);
   /**
    * Initialization of express
    */
