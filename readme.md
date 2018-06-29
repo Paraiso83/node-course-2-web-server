@@ -9,3 +9,7 @@ npm install hbs --save
 
 Run with:
 nodemon server.js -e
+
+Using GIT:
+git init    -> creates local repository (creates .git folder)
+git status
